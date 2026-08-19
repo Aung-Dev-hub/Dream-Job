@@ -11,7 +11,7 @@ const jobScheme = new mongoose.Schema ({
         email: ["Remote", "Full=Time", "Part-Time", "Internship", "Contract"],
         required: true,
     },
-    company: {type: mongoose.Schema.Types.ObjectId, ref: "USer", required: true}, // Employer
+    company: {type: mongoose.Schema.Types.ObjectId, ref: "User", required: true}, // Employer
 
     salaryMin: {type: Number},
     salaryMax: {type: Number},
