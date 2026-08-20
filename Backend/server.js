@@ -5,6 +5,8 @@ const path = require('path');
 const connectDB = require("./config/db.js");
 
 const authRoutes = require("./routes/authRoutes");
+const userRoutes = require("./routes/userRoutes.js");
+const jobRoutes = require("./routes/jobRoutes.js");
 
 const app = express();
 
@@ -25,9 +27,11 @@ app.use(express.json());
 
 //Routes
 app.use("/api/auth", authRoutes);
+app.use("/api/user", userRoutes);
+app.use("/api/jobs", jobRoutes);
 
 //SErve uploads folder
-app.use("./uploads", express.static(path.join(__dirname, "uploads"), {}));
+app.use("/uploads", express.static(path.join(__dirname, "uploads"), {}));
 
 //Start Server
 const PORT = process.env.PORT || 5000;

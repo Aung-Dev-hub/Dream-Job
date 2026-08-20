@@ -27,7 +27,6 @@ exports.register = async (req, res) => {
             companyLogo: user.companyLogo || '',
             resume: user.resume || '',
         });
-
     } catch (err) {
         res.status(500).json({ message: err.message });
     }
@@ -55,8 +54,8 @@ exports.login = async (req, res) => {
             resume: user.resume || '',
         });
     } catch (err) {
-
-    } res.status(500).json({ message: err.message });
+        res.status(500).json({ message: err.message });
+    } 
 };
 
 // @desc Get logged-in user
